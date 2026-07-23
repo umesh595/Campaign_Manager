@@ -29,11 +29,6 @@ function Login(){
           <h2>Login</h2>
           <label>Email<input type="email" name="email" value={form.email} onChange={change} /></label>
           <label>Password<input type="password" name="password" value={form.password} onChange={change} /></label>
-          <div className="demo-logins">
-            <span>admin@test.com / admin123</span>
-            <span>super@test.com / super123</span>
-            <span>user@test.com / user123</span>
-          </div>
           {error&&<p className="error">{error}</p>}
           <button>Login</button>
           <p className="form-link">New user? <Link to="/signup">Create account</Link></p>
