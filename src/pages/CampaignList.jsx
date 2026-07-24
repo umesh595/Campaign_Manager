@@ -58,7 +58,7 @@ function CampaignList(){
         </div>
         {filteredCampaigns.map(campaign=>(
           <div className="table-row" key={campaign.id}>
-            <span className="campaign-id">#{campaign.id}</span>
+            <span className="campaign-id">{campaign.id}</span>
             <img src={campaign.banner} alt={campaign.name} />
             <Link to={`/campaigns/${campaign.id}`} className="campaign-name">{campaign.name}</Link>
             <span>{campaign.ownerName}</span>
