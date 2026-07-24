@@ -1,11 +1,11 @@
 import { createContext, useContext } from 'react'
 import useLocalStorage from '../hooks/useLocalStorage'
-import { defaultCampaigns } from '../data/campaignData'
+import { createMockCampaigns, defaultCampaigns } from '../data/campaignData'
 
 const CampaignContext=createContext()
 
 export function CampaignProvider({children}){
-  const [campaigns,setCampaigns]=useLocalStorage('adtech_campaigns_v3',defaultCampaigns)
+  const [campaigns,setCampaigns]=useLocalStorage('adtech_campaigns_v4',defaultCampaigns)
   function addCampaign(campaign){
     setCampaigns([...campaigns,{...campaign,id:Date.now(),status:'Active',createdAt:new Date().toISOString().slice(0,10)}])
   }
@@ -19,7 +19,7 @@ export function CampaignProvider({children}){
     setCampaigns(campaigns.filter(item=>item.id!==Number(id)))
   }
   function resetCampaigns(){
-    setCampaigns(defaultCampaigns)
+    setCampaigns(createMockCampaigns())
   }
   return <CampaignContext.Provider value={{campaigns,addCampaign,updateCampaign,changeStatus,deleteCampaign,resetCampaigns}}>{children}</CampaignContext.Provider>
 }

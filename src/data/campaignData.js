@@ -2,6 +2,7 @@ import banner1 from '../assets/banner1.svg'
 import banner2 from '../assets/banner2.svg'
 import banner3 from '../assets/banner3.svg'
 import banner4 from '../assets/banner4.svg'
+import { starterUsers } from './userData'
 
 export const bannerImages=[banner1,banner2,banner3,banner4]
 
@@ -11,3 +12,35 @@ export const defaultCampaigns=[
   {id:3,name:'Travel Weekend Offer',description:'Weekend travel package promotion.',status:'Active',platform:'Facebook',audience:'35+',budget:21000,banner:banner3,ownerName:'Priya Nair',ownerEmail:'priya@test.com',createdBy:'Super Admin',createdAt:'2026-07-15'},
   {id:4,name:'App Install Push',description:'Install campaign for mobile app.',status:'Active',platform:'YouTube',audience:'18-24',budget:15000,banner:banner4,ownerName:'Rahul Sharma',ownerEmail:'rahul@test.com',createdBy:'Super Admin',createdAt:'2026-07-18'}
 ]
+
+const campaignNames=['Festive Offers','Lead Booster','Weekend Sale','App Install Push','Brand Awareness','Search Traffic','Summer Deals','Video Reach']
+const descriptions=['Campaign for product offers.','Lead generation campaign.','Promotion for selected audience.','Budget test campaign.','Awareness campaign for new users.']
+const platforms=['Google Search','Facebook','Instagram','YouTube']
+const ageGroups=['18-24','25-34','35+']
+const statuses=['Active','Paused']
+
+function pick(list){
+  return list[Math.floor(Math.random()*list.length)]
+}
+
+export function createMockCampaigns(){
+  const owners=starterUsers.filter(user=>user.role==='User')
+  const count=4+Math.floor(Math.random()*3)
+  return Array.from({length:count},(_,index)=>{
+    const owner=pick(owners)
+    return {
+      id:Date.now()+index,
+      name:`${pick(campaignNames)} ${index+1}`,
+      description:pick(descriptions),
+      status:pick(statuses),
+      platform:pick(platforms),
+      audience:pick(ageGroups),
+      budget:Math.floor((5000+Math.random()*950000)/1000)*1000,
+      banner:pick(bannerImages),
+      ownerName:owner.name,
+      ownerEmail:owner.email,
+      createdBy:'Super Admin',
+      createdAt:new Date().toISOString().slice(0,10)
+    }
+  })
+}

@@ -25,7 +25,7 @@ function Dashboard(){
   },[])
   return (
     <section>
-      <PageTitle tag="OVERVIEW" title="Analytics Dashboard" text={`${currentUser.role} dashboard`} action={canManageCampaigns(currentUser.role)&&<Link className="primary-btn" to="/campaigns/new">＋ New Campaign</Link>} />
+      <PageTitle tag="OVERVIEW" title="Analytics Dashboard" text={`${currentUser.role} dashboard`} action={canManageCampaigns(currentUser.role)&&<Link className="primary-btn" to="/campaigns/new">+ New Campaign</Link>} />
       <div className="stats-grid">
         <StatCard label="Total Campaigns" value={campaigns.length} sub="All created campaigns" />
         <StatCard label="Active Campaigns" value={active.length} sub={`${paused.length} currently paused`} />

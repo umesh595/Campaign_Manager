@@ -39,7 +39,7 @@ function CampaignList(){
   }
   return (
     <section>
-      <PageTitle tag="CAMPAIGNS" title="Campaign List" text={`${currentUser.role} access`} action={canEdit&&<Link className="primary-btn" to="/campaigns/new">＋ Create</Link>} />
+      <PageTitle tag="CAMPAIGNS" title="Campaign List" text={`${currentUser.role} access`} action={canEdit&&<Link className="primary-btn" to="/campaigns/new">+ Create</Link>} />
       <div className="filter-bar">
         <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search by campaign name, owner or platform" />
         <select value={status} onChange={e=>setStatus(e.target.value)}>
@@ -75,7 +75,7 @@ function CampaignList(){
         ))}
         {filteredCampaigns.length===0&&<div className="empty-row">No campaigns found</div>}
       </div>
-      {canDelete&&<button className="reset-btn" onClick={resetCampaigns}>Reset default mock data</button>}
+      {canDelete&&<button className="reset-btn" onClick={resetCampaigns}>Generate mock data</button>}
     </section>
   )
 }
