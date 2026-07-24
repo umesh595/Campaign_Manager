@@ -10,15 +10,17 @@ export function AuthProvider({children}){
   function signup(form){
     const exists=users.some(user=>user.email.toLowerCase()===form.email.toLowerCase())
     if(exists)return {ok:false,message:'Email already registered'}
-    const newUser={id:Date.now(),...form}
+    const newUser={id:Date.now(),name:form.name,email:form.email,password:form.password,role:'User'}
     setUsers([...users,newUser])
-    setCurrentUser({id:newUser.id,name:newUser.name,email:newUser.email,role:newUser.role})
+    setCurrentUser({id:newUser.id,name:newUser.name,email:newUser.email,role:'User'})
     return {ok:true}
   }
   function login(email,password){
     const found=users.find(user=>user.email.toLowerCase()===email.toLowerCase()&&user.password===password)
     if(!found)return {ok:false,message:'Invalid email or password'}
-    setCurrentUser({id:found.id,name:found.name,email:found.email,role:found.role})
+    const fixedUser=starterUsers.find(user=>user.email.toLowerCase()===found.email.toLowerCase())
+    const role=fixedUser?fixedUser.role:'User'
+    setCurrentUser({id:found.id,name:found.name,email:found.email,role})
     return {ok:true}
   }
   function logout(){

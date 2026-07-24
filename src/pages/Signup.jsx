@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext'
 function Signup(){
   const {signup,currentUser}=useAuth()
   const navigate=useNavigate()
-  const [form,setForm]=useState({name:'',email:'',password:'',role:'User'})
+  const [form,setForm]=useState({name:'',email:'',password:''})
   const [error,setError]=useState('')
   if(currentUser)return <Navigate to="/" replace />
   function change(e){
@@ -34,7 +34,7 @@ function Signup(){
           <label>Name<input name="name" value={form.name} onChange={change} /></label>
           <label>Email<input type="email" name="email" value={form.email} onChange={change} /></label>
           <label>Password<input type="password" name="password" value={form.password} onChange={change} /></label>
-          <label>Role<select name="role" value={form.role} onChange={change}><option>User</option><option>Admin</option><option>Super Admin</option></select></label>
+          <p className="role-note">New accounts are created with User access.</p>
           {error&&<p className="error">{error}</p>}
           <button>Create Account</button>
           <p className="form-link">Already have account? <Link to="/login">Login</Link></p>

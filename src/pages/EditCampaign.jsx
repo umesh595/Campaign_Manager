@@ -6,6 +6,7 @@ import { useCampaigns } from '../context/CampaignContext'
 import { bannerImages } from '../data/campaignData'
 
 function EditCampaign(){
+  const maxBudget=1000000
   const {id}=useParams()
   const navigate=useNavigate()
   const {users,currentUser}=useAuth()
@@ -32,8 +33,9 @@ function EditCampaign(){
   }
   function submit(e){
     e.preventDefault()
-    if(!form.name.trim()||!form.description.trim()||!form.platform||!form.audience||!form.budget||Number(form.budget)<=0||!form.banner||!form.ownerEmail){
-      setError('Please enter campaign details, select owner, positive budget and banner')
+    if(!form.name.trim()||!form.description.trim()||!form.platform||!form.audience||!form.budget||Number(form.budget)<=0||Number(form.budget)>maxBudget||!form.banner||!form.ownerEmail){
+      if(Number(form.budget)>maxBudget)setError('Budget cannot be more than Rs 10,00,000')
+      else setError('Please enter campaign details, select owner, positive budget and banner')
       return
     }
     const owner=users.find(user=>user.email===form.ownerEmail)
@@ -50,7 +52,7 @@ function EditCampaign(){
           <label>Campaign Owner<select name="ownerEmail" value={form.ownerEmail} onChange={change}>{users.map(user=><option value={user.email} key={user.email}>{user.name} ({user.role})</option>)}</select></label>
           <label>Platform<select name="platform" value={form.platform} onChange={change}><option>Google Search</option><option>Facebook</option><option>Instagram</option><option>YouTube</option></select></label>
           <label>Age Group<select name="audience" value={form.audience} onChange={change}><option>18-24</option><option>25-34</option><option>35+</option></select></label>
-          <label>Budget<input name="budget" type="number" min="1" value={form.budget} onChange={change} /></label>
+          <label>Budget<input name="budget" type="number" min="1" max={maxBudget} value={form.budget} onChange={change} /></label>
         </div>
         <div className="banner-section">
           <h3>Picture Gallery</h3>
