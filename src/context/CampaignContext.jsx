@@ -5,7 +5,7 @@ import { createMockCampaigns, defaultCampaigns } from '../data/campaignData'
 const CampaignContext=createContext()
 
 export function CampaignProvider({children}){
-  const [campaigns,setCampaigns]=useLocalStorage('adtech_campaigns_v4',defaultCampaigns)
+  const [campaigns,setCampaigns]=useLocalStorage('adtech_campaigns_v5',defaultCampaigns)
   function addCampaign(campaign){
     setCampaigns([...campaigns,{...campaign,id:Date.now(),status:'Active',createdAt:new Date().toISOString().slice(0,10)}])
   }
