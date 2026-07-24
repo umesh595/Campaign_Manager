@@ -116,19 +116,66 @@ label small{text-align:right;color:#64748b;font-weight:400}
 .detail-actions .link-btn{min-width:86px}
 @media(max-width:950px){
   .app-shell{grid-template-columns:1fr}
-  .sidebar{position:static}
+  .sidebar{position:static;border-right:0;border-bottom:1px solid #d8dee8}
+  .brand h2{font-size:22px}
   .menu{grid-template-columns:repeat(3,1fr)}
+  .menu a{font-size:16px;justify-content:center}
   .profile-box{margin-top:0}
   .stats-grid,.dashboard-grid,.detail-card,.filter-bar{grid-template-columns:1fr}
   .table-card{overflow-x:auto}
   .table-row{min-width:1050px}
   .banner-grid{grid-template-columns:repeat(2,1fr)}
+  .campaign-form{max-width:none}
 }
 @media(max-width:640px){
-  .content{padding:20px}
-  .page-title{display:grid}
-  .auth-title{font-size:26px}
+  body{font-size:14px}
+  .sidebar{padding:14px;gap:14px}
+  .brand{gap:10px}
+  .brand-icon{width:42px;height:42px;font-size:20px}
+  .brand h2{font-size:20px}
+  .brand p{font-size:12px}
+  .role-strip{padding:10px 2px;font-size:14px}
+  .menu{grid-template-columns:1fr;gap:6px}
+  .menu a{justify-content:flex-start;font-size:15px;padding:10px 12px}
+  .menu a span{font-size:17px;width:20px}
+  .profile-box{padding-top:12px}
+  .profile-box b{font-size:16px}
+  .bottom-actions{display:grid;grid-template-columns:1fr 1fr}
+  .bottom-actions button{height:42px;min-width:0;width:100%}
+  .content{padding:16px}
+  .page-title{display:grid;gap:12px;margin-bottom:16px}
+  .page-title h1{font-size:24px}
+  .page-title .primary-btn,.page-title .light-btn{width:100%;height:44px}
+  .auth-page{padding:16px}
+  .auth-title{font-size:24px}
+  .auth-form{padding:22px}
+  .stats-grid{gap:12px}
+  .stat-card{padding:16px}
+  .stat-card h3{font-size:25px}
+  .panel{padding:14px}
+  .panel-head{align-items:flex-start;gap:10px}
+  .filter-bar{padding:14px;gap:10px}
+  input,select{width:100%;font-size:14px}
+  .table-card{overflow:visible;background:transparent;border:0;box-shadow:none}
+  .table-head{display:none}
+  .table-row{min-width:0;display:grid;grid-template-columns:84px 1fr;gap:8px 12px;margin-bottom:12px;padding:14px;background:white;border:1px solid #dce3ee;border-radius:8px;box-shadow:0 8px 18px rgba(15,23,42,.04)}
+  .table-row img{grid-row:1/4;width:84px;height:64px}
+  .campaign-id{font-size:12px}
+  .campaign-name{padding-left:0;font-size:15px}
+  .table-row span,.table-row b{font-size:13px}
+  .action-buttons{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:6px}
+  .action-buttons .light-btn,.action-buttons .danger-btn,.table-btn{width:100%;min-width:0}
+  .reset-btn{width:100%;height:44px}
   .form-grid,.detail-grid,.stats-grid{grid-template-columns:1fr}
-  .menu{grid-template-columns:1fr}
   .banner-grid{grid-template-columns:1fr}
+  .campaign-form{padding:18px}
+  .banner-choice{height:170px}
+  .form-actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .form-actions button,.form-actions a{width:100%;height:44px}
+  .detail-card{padding:16px;gap:16px}
+  .detail-card>img{height:220px}
+  .detail-info h2{font-size:23px}
+  .detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .detail-actions button,.detail-actions a{width:100%;height:42px}
+  .dark-mode .table-row{background:#172033;border-color:#2b3648}
 }
