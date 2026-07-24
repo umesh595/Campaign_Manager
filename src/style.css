@@ -78,15 +78,15 @@ button:disabled{opacity:.6;cursor:not-allowed}
 .dark-mode .role-strip,.dark-mode .profile-box{border-color:#2b3648}
 .dark-mode input,.dark-mode select,.dark-mode textarea,.dark-mode .bottom-actions button{background:#0f172a;border-color:#334155;color:#e5e7eb}
 .dark-mode .table-head,.dark-mode .detail-grid p,.dark-mode .demo-logins span{background:#111827;border-color:#334155}
-.auth-page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:#e9f2ff}
-.auth-title{font-size:30px;margin:0 0 18px;color:#18345e;text-align:center}
-.auth-card{width:min(420px,100%);background:#ffffff;border:1px solid #c8d8ee;border-radius:8px;box-shadow:0 12px 28px rgba(37,99,235,.12)}
+.auth-page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#e0f2fe 0%,#dbeafe 42%,#fce7f3 100%)}
+.auth-title{font-size:32px;margin:0 0 20px;color:#12315f;text-align:center}
+.auth-card{width:min(430px,100%);background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.9);border-radius:10px;box-shadow:0 20px 45px rgba(30,64,175,.18)}
 .demo-logins{display:grid;gap:7px}
 .demo-logins span{background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:8px;font-size:12px;color:#64748b}
 .auth-form{padding:32px;display:grid;gap:16px}
-.auth-form h2{font-size:26px;margin:0 0 5px;color:#18345e}
-.auth-form button{background:#1f5fbf;color:white}
-.auth-form button:hover{background:#174d9d}
+.auth-form h2{font-size:26px;margin:0 0 5px;color:#12315f}
+.auth-form button{background:#2563eb;color:white;box-shadow:0 8px 18px rgba(37,99,235,.24)}
+.auth-form button:hover{background:#1d4ed8}
 label{display:grid;gap:7px;font-weight:700;color:#334155;font-size:14px}
 input,select{height:42px;border:1px solid #cbd5e1;border-radius:6px;padding:8px 10px;font-size:15px;background:white}
 textarea{min-height:170px;border:1px solid #cbd5e1;border-radius:6px;padding:12px;font-size:15px;font-family:inherit;resize:vertical}
