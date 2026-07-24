@@ -75,7 +75,7 @@ function CampaignList(){
         ))}
         {filteredCampaigns.length===0&&<div className="empty-row">No campaigns found</div>}
       </div>
-      {canDelete&&<button className="reset-btn" onClick={resetCampaigns}>Generate mock data</button>}
+      {canEdit&&<button className="reset-btn" onClick={resetCampaigns}>Generate mock data</button>}
     </section>
   )
 }
