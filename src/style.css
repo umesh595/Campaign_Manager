@@ -71,6 +71,7 @@ button:disabled{opacity:.6;cursor:not-allowed}
 .dark-mode .content{background:#101827}
 .dark-mode .sidebar,.dark-mode .stat-card,.dark-mode .panel,.dark-mode .table-card,.dark-mode .campaign-form,.dark-mode .detail-card,.dark-mode .auth-card,.dark-mode .filter-bar{background:#172033;border-color:#2b3648;color:#e5e7eb}
 .dark-mode .page-title h1,.dark-mode .brand h2,.dark-mode .campaign-name{color:#f8fafc}
+.dark-mode h1,.dark-mode h2,.dark-mode h3,.dark-mode b,.dark-mode .stat-card h3,.dark-mode .panel-head h2,.dark-mode .table-row,.dark-mode .campaign-id{color:#f8fafc}
 .dark-mode .brand p,.dark-mode .page-title p,.dark-mode .profile-box span,.dark-mode .stat-card p,.dark-mode .stat-card span{color:#94a3b8}
 .dark-mode .menu a{color:#cbd5e1}
 .dark-mode .role-strip,.dark-mode .profile-box{border-color:#2b3648}
