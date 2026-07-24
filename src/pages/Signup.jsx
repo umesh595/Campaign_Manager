@@ -34,7 +34,6 @@ function Signup(){
           <label>Name<input name="name" value={form.name} onChange={change} /></label>
           <label>Email<input type="email" name="email" value={form.email} onChange={change} /></label>
           <label>Password<input type="password" name="password" value={form.password} onChange={change} /></label>
-          <p className="role-note">New accounts are created with User access.</p>
           {error&&<p className="error">{error}</p>}
           <button>Create Account</button>
           <p className="form-link">Already have account? <Link to="/login">Login</Link></p>

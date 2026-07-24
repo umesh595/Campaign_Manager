@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext'
 function Login(){
   const {login,currentUser}=useAuth()
   const navigate=useNavigate()
-  const [form,setForm]=useState({email:'admin@test.com',password:'admin123'})
+  const [form,setForm]=useState({email:'',password:''})
   const [error,setError]=useState('')
   if(currentUser)return <Navigate to="/" replace />
   function change(e){
