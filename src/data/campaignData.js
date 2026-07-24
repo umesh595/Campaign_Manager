@@ -25,13 +25,13 @@ function pick(list){
   return list[Math.floor(Math.random()*list.length)]
 }
 
-export function createMockCampaigns(){
+export function createMockCampaigns(startId=1){
   const owners=starterUsers.filter(user=>user.role==='User')
   const count=6
   return Array.from({length:count},(_,index)=>{
     const owner=pick(owners)
     return {
-      id:Date.now()+index,
+      id:startId+index,
       name:`${pick(campaignNames)} ${index+1}`,
       description:pick(descriptions),
       status:index<5?'Active':pick(statuses),
