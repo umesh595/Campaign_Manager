@@ -64,7 +64,7 @@ button:disabled{opacity:.6;cursor:not-allowed}
 .view-btn{background:#eef2ff;color:#1d4ed8}
 .edit-btn{background:#e0f2fe;color:#0369a1}
 .empty-row{padding:22px;text-align:center;color:#667085}
-.mini-filters{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+.mini-filters{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:22px}
 .empty-box{height:250px;display:grid;place-items:center;color:#64748b;text-align:center}
 .dark-mode{background:#101827;color:#e5e7eb}
 .dark-mode .content{background:#101827}

@@ -10,13 +10,12 @@ import { canManageCampaigns } from '../utils/permissions'
 function Dashboard(){
   const {currentUser}=useAuth()
   const campaigns=useVisibleCampaigns()
-  const [status,setStatus]=useState('All')
   const [age,setAge]=useState('All')
   const active=campaigns.filter(campaign=>campaign.status==='Active')
   const paused=campaigns.filter(campaign=>campaign.status==='Paused')
   const totalBudget=campaigns.reduce((sum,campaign)=>sum+Number(campaign.budget),0)
   const topCampaigns=[...active].sort((a,b)=>b.budget-a.budget).slice(0,5)
-  const filtered=campaigns.filter(campaign=>(status==='All'||campaign.status===status)&&(age==='All'||campaign.audience===age))
+  const filtered=active.filter(campaign=>age==='All'||campaign.audience===age)
   const platformData=filtered.reduce((list,campaign)=>{
     const found=list.find(item=>item.platform===campaign.platform)
     if(found)found.budget+=Number(campaign.budget)
@@ -50,10 +49,9 @@ function Dashboard(){
         </div>
         <div className="panel">
           <div className="panel-head">
-            <h2>Budget by Platform</h2>
+            <h2>Active Budget by Platform</h2>
           </div>
           <div className="mini-filters">
-            <label>Status<select value={status} onChange={e=>setStatus(e.target.value)}><option>All</option><option>Active</option><option>Paused</option></select></label>
             <label>Age<select value={age} onChange={e=>setAge(e.target.value)}><option>All</option><option>18-24</option><option>25-34</option><option>35+</option></select></label>
           </div>
           {platformData.length>0?
