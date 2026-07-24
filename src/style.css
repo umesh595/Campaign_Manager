@@ -51,11 +51,12 @@ button:disabled{opacity:.6;cursor:not-allowed}
 .recent-item em{font-style:normal;font-size:12px}
 .filter-bar{background:white;border:1px solid #dce3ee;border-radius:8px;box-shadow:0 10px 22px rgba(15,23,42,.04);display:grid;grid-template-columns:1.7fr .8fr .8fr .9fr .9fr auto;gap:14px;margin-bottom:20px;padding:20px}
 .table-card{overflow:hidden}
-.table-row{display:grid;grid-template-columns:122px 1.3fr 1fr .75fr 1fr .75fr .8fr 250px;gap:18px;align-items:center;padding:14px 20px;border-bottom:1px solid #edf1f7;font-size:14px}
+.table-row{display:grid;grid-template-columns:92px 122px 1.3fr 1fr .75fr 1fr .75fr .8fr 250px;gap:18px;align-items:center;padding:14px 20px;border-bottom:1px solid #edf1f7;font-size:14px}
 .table-row:last-child{border-bottom:0}
 .table-head{background:#f8fafc;color:#667085;font-weight:700;font-size:13px}
 .table-row img{width:112px;height:64px;object-fit:contain;background:#f8fafc;border-radius:6px;border:1px solid #e2e8f0}
 .campaign-name{font-weight:700;color:#172033;padding-left:6px}
+.campaign-id{font-weight:800;color:#475569}
 .pill{width:max-content;padding:6px 10px;border-radius:30px;font-size:12px;font-weight:700}
 .active{background:#dcfce7;color:#15803d}
 .paused{background:#fef3c7;color:#b45309}

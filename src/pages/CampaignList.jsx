@@ -54,10 +54,11 @@ function CampaignList(){
       </div>
       <div className="table-card">
         <div className="table-row table-head">
-          <span>Banner</span><span>Name</span><span>Owner</span><span>Status</span><span>Platform</span><span>Audience</span><span>Budget</span><span>Actions</span>
+          <span>ID</span><span>Banner</span><span>Name</span><span>Owner</span><span>Status</span><span>Platform</span><span>Audience</span><span>Budget</span><span>Actions</span>
         </div>
         {filteredCampaigns.map(campaign=>(
           <div className="table-row" key={campaign.id}>
+            <span className="campaign-id">#{campaign.id}</span>
             <img src={campaign.banner} alt={campaign.name} />
             <Link to={`/campaigns/${campaign.id}`} className="campaign-name">{campaign.name}</Link>
             <span>{campaign.ownerName}</span>
